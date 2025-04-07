@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ResortsAndTravelTypes
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void BtnReserve_Click(object sender, EventArgs e)
+        {
+            if (listBoxResorts.SelectedItem != null)
+            {
+                MessageBox.Show("Reserva realizada para: " + listBoxResorts.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un resort para reservar.");
+            }
+        }
+
+        private void listBoxTravelTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Agregar tipos de viajes a la lista
+            listBoxTravelTypes.Items.Add(" 1. Montaña\nDescripción: Disfruta de la tranquilidad, el aire fresco y paisajes impresionantes en destinos rodeados de naturaleza. Perfecto para amantes del senderismo, el ecoturismo y el clima fresco.\nDestinos: Jarabacoa, Constanza");
+            listBoxTravelTypes.Items.Add(" 2. Playa\nDescripción: Relájate bajo el sol con arenas blancas, aguas cristalinas y actividades acuáticas inolvidables. Ideal para vacaciones relajantes o escapadas románticas.\nDestinos: Punta Cana, Bahía de las Águilas");
+            listBoxTravelTypes.Items.Add(" 3. Ciudad\nDescripción: Explora la historia, cultura y vida urbana de los destinos más emblemáticos del país. Perfecto para quienes disfrutan de museos, arquitectura y vida nocturna.\nDestinos: Zona Colonial, Centro Histórico de Puerto Plata");
+        }
+
+        private void listBoxResorts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Agregar resorts a la lista
+            listBoxResorts.Items.Add(" 1. Paradise Cove Resort\nDescripción: Un exclusivo resort frente al mar con villas privadas, piscinas infinitas y gastronomía gourmet. Ideal para escapadas románticas o vacaciones de lujo.\nPrecio: Desde $350 USD por noche");
+            listBoxResorts.Items.Add(" 2. Sunset Bay Eco Resort\nDescripción: Un paraíso ecológico rodeado de naturaleza, con actividades al aire libre como kayak, senderismo y snorkel. Perfecto para amantes de la aventura y la sostenibilidad.\nPrecio: Desde $180 USD por noche");
+            listBoxResorts.Items.Add(" 3. Coral Breeze All-Inclusive\nDescripción: Resort todo incluido con acceso directo a la playa, entretenimiento diario y spa de servicio completo. Ideal para familias y grupos grandes.\nPrecio: Desde $250 USD por noche");
+        }
+    }
+}
