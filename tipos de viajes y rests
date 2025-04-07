@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace proyectofinal
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void LoadResorts()
+        {
+            listBoxResorts.Items.Add("1. Paradise Cove Resort");
+            listBoxResorts.Items.Add("2. Sunset Bay Eco Resort");
+            listBoxResorts.Items.Add("3. Coral Breeze All-Inclusive");
+        }
+        private void listBoxResorts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (listBoxResorts.SelectedIndex)
+            {
+                case 0:
+                    textBoxDescription.Text = "Descripción: Un exclusivo resort frente al mar con villas privadas, piscinas infinitas y gastronomía gourmet. Ideal para escapadas románticas o vacaciones de lujo. Precio: Desde $350 USD por noche.";
+                    break;
+                case 1:
+                    textBoxDescription.Text = "Descripción: Un paraíso ecológico rodeado de naturaleza, con actividades al aire libre como kayak, senderismo y snorkel. Perfecto para amantes de la aventura y la sostenibilidad. Precio: Desde $180 USD por noche.";
+                    break;
+                case 2:
+                    textBoxDescription.Text = "Descripción: Resort todo incluido con acceso directo a la playa, entretenimiento diario y spa de servicio completo. Ideal para familias y grupos grandes. Precio: Desde $250 USD por noche.";
+                    break;
+            }
+        }
+
+        private void buttonReserve_Click_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("¡Reserva realizada con éxito!", "Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
+}
